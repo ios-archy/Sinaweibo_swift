@@ -16,6 +16,7 @@
 		DE5B04681DB4CFA10034520D /* DisCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B04671DB4CFA10034520D /* DisCoverViewController.swift */; };
 		DE5B046A1DB4CFA80034520D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B04691DB4CFA80034520D /* MessageViewController.swift */; };
 		DE5B046C1DB4CFB20034520D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B046B1DB4CFB20034520D /* ProfileViewController.swift */; };
+		DE5B046F1DB4DF940034520D /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = DE5B046E1DB4DF940034520D /* MainVCSettings.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DE5B04671DB4CFA10034520D /* DisCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisCoverViewController.swift; sourceTree = "<group>"; };
 		DE5B04691DB4CFA80034520D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		DE5B046B1DB4CFB20034520D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DE5B046E1DB4DF940034520D /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +77,9 @@
 		DE5B045D1DB4CF6A0034520D /* Classess */ = {
 			isa = PBXGroup;
 			children = (
+				DE5B04601DB4CF6A0034520D /* Main */,
 				DE5B045E1DB4CF6A0034520D /* Discover */,
 				DE5B045F1DB4CF6A0034520D /* Home */,
-				DE5B04601DB4CF6A0034520D /* Main */,
 				DE5B04611DB4CF6A0034520D /* Message */,
 				DE5B04621DB4CF6A0034520D /* Profile */,
 			);
@@ -103,6 +105,7 @@
 		DE5B04601DB4CF6A0034520D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DE5B046D1DB4DF8D0034520D /* Resource */,
 				DE5B04631DB4CF8E0034520D /* MainViewController.swift */,
 			);
 			path = Main;
@@ -122,6 +125,14 @@
 				DE5B046B1DB4CFB20034520D /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		DE5B046D1DB4DF8D0034520D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DE5B046E1DB4DF940034520D /* MainVCSettings.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			files = (
 				DE5B04561DB4CDFE0034520D /* LaunchScreen.storyboard in Resources */,
 				DE5B04531DB4CDFE0034520D /* Assets.xcassets in Resources */,
+				DE5B046F1DB4DF940034520D /* MainVCSettings.json in Resources */,
 				DE5B04511DB4CDFE0034520D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
