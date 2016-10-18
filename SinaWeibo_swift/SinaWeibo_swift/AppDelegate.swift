@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //设置全局颜色
         UITabBar.appearance().tintColor = UIColor.orangeColor()
-        
-        //创建Window
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.backgroundColor = UIColor.whiteColor()
-        window?.rootViewController = MainViewController()
-        window?.makeKeyAndVisible()
+//
+//        //创建Window
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        window?.backgroundColor = UIColor.whiteColor()
+//        window?.rootViewController = MainViewController()
+//        window?.makeKeyAndVisible()
         return true
     }
 
