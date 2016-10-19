@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DisCoverViewController: UITableViewController {
+class DisCoverViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
