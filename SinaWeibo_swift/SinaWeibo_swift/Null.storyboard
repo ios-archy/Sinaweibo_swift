@@ -37,7 +37,7 @@
         <scene sceneID="SdF-sZ-u9h">
             <objects>
                 <navigationController id="6Sm-GT-2I7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="Mwy-TY-Qee"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="Mwy-TY-Qee"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S5j-UV-Zoj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

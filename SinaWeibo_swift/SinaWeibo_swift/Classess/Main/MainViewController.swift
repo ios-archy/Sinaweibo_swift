@@ -10,35 +10,83 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
-    //Mark :懒加载属性
-    private lazy var imageNames = ["tabbar_home","tabbar_message_center","","tabbar_discover","tabbar_profile"]
+    private lazy var composeBtn : UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+          setUpcenterBtn()
+        
         }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //1.遍历所有的Item
-        for  i in 0..<tabBar.items!.count
-        {
-            //2.获取item
-            let item = tabBar.items![i]
-            //3.如果是下标值为2，则该item不可以和用户交互
-            if i == 2 {
-                item.enabled = false
-                continue
-            }
-            
-            //4.设置其他item的选中时候的图片
-            item.selectedImage = UIImage(named: imageNames[i] + "_highlighted")
-        }
-
-       }
+        
+    
+    }
 
 }
+
+//Mark:--设置UI界面
+extension MainViewController {
+    /**
+     设置发布按钮
+     */
+    private func setUpcenterBtn() {
+    
+        //1.添加到tabbar中
+        tabBar.addSubview(composeBtn)
+      
+        //2.设置位置
+        composeBtn.center = CGPointMake(tabBar.center.x, tabBar.bounds.size.height * 0.5)
+        
+        //3.监听发布按钮的点击
+        //Selector两种写法：1。Selector()括号里放字符串 ：Selector("composeBtnClick")  2.直接传字符串："composeBtnClick"
+        composeBtn.addTarget(self, action: "composeBtnClick", forControlEvents: .TouchUpInside)
+    }
+}
+
+//MARK:--事件监听
+
+extension MainViewController {
+//事件监听本质是发送消息，但是发送消息是OC的特性
+    //将方法包装秤@SEL-->类中查找方法列表-->根据@SEL找到imp指针（函数）->>执行函数
+    //如果swift中将一个函数申明为private，那么该函数不会被添加到方法列表
+    //如果在priv 前面加上objc，那么该方法依然会被添加到方法列表中
+ @objc private  func composeBtnClick(){
+    
+      print("composeBtnClick")
+    }
+
+}
+
+
+
+//extension MainViewController
+//{
+//
+//    //Mark :懒加载属性
+//    private lazy var imageNames = ["tabbar_home","tabbar_message_center","","tabbar_discover","tabbar_profile"]
+//    func addTabbarImage() {
+//        //1.遍历所有的Item
+//        for  i in 0..<tabBar.items!.count
+//        {
+//            //2.获取item
+//            let item = tabBar.items![i]
+//            //3.如果是下标值为2，则该item不可以和用户交互
+//            if i == 2 {
+//                item.enabled = false
+//                continue
+//            }
+//            
+//            //4.设置其他item的选中时候的图片
+//            item.selectedImage = UIImage(named: imageNames[i] + "_highlighted")
+//        }
+//        
+//
+//    }
+//}
 
 //// MARK: - 一下文件都没啥用了
 //extension MainViewController {
