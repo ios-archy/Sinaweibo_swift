@@ -14,7 +14,7 @@ class BaseViewController: UITableViewController {
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     // MARK:- 定义变量
-    var isLogin : Bool = false
+    var isLogin : Bool = true
     
     // MARK:- 系统调用函数
     override func loadView() {
@@ -22,15 +22,48 @@ class BaseViewController: UITableViewController {
     }
     override func viewDidLoad() {
          super.viewDidLoad()
+        setUpNavigationItems()
     }
 
 }
 
+ //MARK: --设置UI界面
 extension BaseViewController
 {
-
+//设置方可视图
     private func setUpVisitorView() {
     
         view = visitorView
+        //监听访客视图“注册”和“登录按钮的点击”
+        visitorView.RegisterBtn.addTarget(self, action: "registerBtnClick", forControlEvents: .TouchUpInside)
+        visitorView.LoginBtn.addTarget(self, action: "loginBtnClick", forControlEvents: .TouchUpInside)
+    }
+    
+    /**
+    *  设置导航栏左右的Item
+    */
+    private func setUpNavigationItems(){
+    
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .Plain, target: self, action: "registerBtnClick")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: .Plain, target: self, action: "loginBtnClick")
     }
 }
+
+ //MARK: --事件监听
+extension BaseViewController {
+
+    @objc private func registerBtnClick(){
+    
+        print("registerBtnClick")
+    }
+    
+    @objc private func loginBtnClick(){
+    
+         print("loginBtnClick")
+    }
+
+}
+
+
+
+
