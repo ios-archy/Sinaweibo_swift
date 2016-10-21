@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282662871DB9FE1E005B657D /* ArchyPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282662861DB9FE1E005B657D /* ArchyPresentationController.swift */; };
 		2849F2FE1DB8A333009A8149 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FD1DB8A333009A8149 /* UIButton-Extension.swift */; };
 		2849F3001DB8A355009A8149 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FF1DB8A355009A8149 /* TitleButton.swift */; };
 		2849F3041DB8B148009A8149 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		282662861DB9FE1E005B657D /* ArchyPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchyPresentationController.swift; sourceTree = "<group>"; };
 		2849F2FD1DB8A333009A8149 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		2849F2FF1DB8A355009A8149 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				2849F3081DB8BA18009A8149 /* PopviewViewController.xib */,
 				2849F3061DB8B9C6009A8149 /* PopoverViewController.swift */,
+				282662861DB9FE1E005B657D /* ArchyPresentationController.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				2849F3071DB8B9C6009A8149 /* PopoverViewController.swift in Sources */,
 				DE5B04681DB4CFA10034520D /* DisCoverViewController.swift in Sources */,
 				DE5B04641DB4CF8E0034520D /* MainViewController.swift in Sources */,
+				282662871DB9FE1E005B657D /* ArchyPresentationController.swift in Sources */,
 				DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */,
 				DE74D7E41DB7C70F009E4E69 /* VisitorView.swift in Sources */,
 				DE5B04661DB4CF970034520D /* HomeViewController.swift in Sources */,

@@ -70,13 +70,21 @@ extension HomeViewController {
         //3.设置控制器的modal样式
         popoverVc.modalPresentationStyle = .Custom
         
+        //设置转场代理
+        popoverVc.transitioningDelegate = self
         //4.弹出控制器
         presentViewController(popoverVc, animated: true, completion: nil)
     }
 }
 
 
+extension HomeViewController :UIViewControllerTransitioningDelegate {
 
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return ArchyPresentationController(presentedViewController: presented,presentingViewController: presenting)
+    }
+    
+}
 
 
 
