@@ -31,14 +31,18 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate {
     //目的：改变弹出的view的尺寸
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ArchyPresentationController(presentedViewController : presented ,presentingViewController: presenting )
         
+        let presentation = ArchyPresentationController(presentedViewController : presented ,presentingViewController: presenting )
+        
+        presentation.presentedFrame = presentedFrame
+        return presentation
     }
     
     // //MARK: --目的：自定义弹出的动画
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         isPresent = true
+        callBack!(presented: isPresent)
          return self
     }
     
@@ -46,6 +50,7 @@ extension PopoverAnimator : UIViewControllerTransitioningDelegate {
      //MARK: --自定义消失的动画
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = false
+        callBack!(presented: isPresent)
         return self
     }
 }

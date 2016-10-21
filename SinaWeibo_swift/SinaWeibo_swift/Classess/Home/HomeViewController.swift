@@ -16,7 +16,9 @@ class HomeViewController: BaseViewController {
     private lazy var titleBtn : TitleButton = TitleButton()
     //注意:在闭包中如果使用当前对象的属性或者调用方法，也需要加self
     //两个地方需要使用self :1>如果在一个函数总出现歧义 2>在比保重使用当前对象的属性方法也需要
-    private lazy var popoviewAnimator : PopoverAnimator = PopoverAnimator()
+    private lazy var popoviewAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) -> () in
+        self?.titleBtn.selected = presented
+    }
      //MARK: --系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
