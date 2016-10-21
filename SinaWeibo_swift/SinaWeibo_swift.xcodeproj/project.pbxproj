@@ -13,6 +13,7 @@
 		2849F2FE1DB8A333009A8149 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FD1DB8A333009A8149 /* UIButton-Extension.swift */; };
 		2849F3001DB8A355009A8149 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FF1DB8A355009A8149 /* TitleButton.swift */; };
 		2849F3041DB8B148009A8149 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */; };
+		285591A21DBA1DC8006F376D /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285591A11DBA1DC8006F376D /* PopoverAnimator.swift */; };
 		DE1419351DB66E74003F3C40 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419331DB66E74003F3C40 /* Home.storyboard */; };
 		DE1419371DB66EB0003F3C40 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419361DB66EB0003F3C40 /* Message.storyboard */; };
 		DE14193A1DB66EC4003F3C40 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419381DB66EC4003F3C40 /* Discover.storyboard */; };
@@ -40,6 +41,7 @@
 		2849F2FD1DB8A333009A8149 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		2849F2FF1DB8A355009A8149 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		285591A11DBA1DC8006F376D /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		DE1419341DB66E74003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		DE1419361DB66EB0003F3C40 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		DE1419391DB66EC4003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				282662861DB9FE1E005B657D /* ArchyPresentationController.swift */,
+				285591A11DBA1DC8006F376D /* PopoverAnimator.swift */,
 				282662881DBA0453005B657D /* PopoverViewController.swift */,
 				2826628A1DBA045F005B657D /* PopoverViewController.xib */,
 			);
@@ -296,6 +299,7 @@
 				DE5B04681DB4CFA10034520D /* DisCoverViewController.swift in Sources */,
 				DE5B04641DB4CF8E0034520D /* MainViewController.swift in Sources */,
 				282662871DB9FE1E005B657D /* ArchyPresentationController.swift in Sources */,
+				285591A21DBA1DC8006F376D /* PopoverAnimator.swift in Sources */,
 				DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */,
 				DE74D7E41DB7C70F009E4E69 /* VisitorView.swift in Sources */,
 				DE5B04661DB4CF970034520D /* HomeViewController.swift in Sources */,
