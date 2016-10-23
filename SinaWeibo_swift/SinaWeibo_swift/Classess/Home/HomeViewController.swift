@@ -78,6 +78,7 @@ extension HomeViewController {
         
         //设置转场代理
         popoverVc.transitioningDelegate = popoviewAnimator
+        popoviewAnimator.presentedFrame  = CGRect(x: 100, y: 60, width: 180, height: 250)
         //4.弹出控制器
         presentViewController(popoverVc, animated: true, completion: nil)
     }
