@@ -14,6 +14,7 @@
 		2849F3001DB8A355009A8149 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FF1DB8A355009A8149 /* TitleButton.swift */; };
 		2849F3041DB8B148009A8149 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */; };
 		285591A21DBA1DC8006F376D /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285591A11DBA1DC8006F376D /* PopoverAnimator.swift */; };
+		57FCBA60A2B19360514DEE3E /* Pods_SinaWeibo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C894A2308770BDB714815 /* Pods_SinaWeibo_swift.framework */; };
 		DE1419351DB66E74003F3C40 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419331DB66E74003F3C40 /* Home.storyboard */; };
 		DE1419371DB66EB0003F3C40 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419361DB66EB0003F3C40 /* Message.storyboard */; };
 		DE14193A1DB66EC4003F3C40 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419381DB66EC4003F3C40 /* Discover.storyboard */; };
@@ -42,6 +43,9 @@
 		2849F2FF1DB8A355009A8149 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		285591A11DBA1DC8006F376D /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		3A3C894A2308770BDB714815 /* Pods_SinaWeibo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWeibo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56EF414E9E1E47CD8AE4D76 /* Pods-SinaWeibo_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeibo_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift.release.xcconfig"; sourceTree = "<group>"; };
+		C042BAA117C366E1B45BE74E /* Pods-SinaWeibo_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeibo_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift.debug.xcconfig"; sourceTree = "<group>"; };
 		DE1419341DB66E74003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		DE1419361DB66EB0003F3C40 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		DE1419391DB66EC4003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57FCBA60A2B19360514DEE3E /* Pods_SinaWeibo_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +100,22 @@
 			path = Popover;
 			sourceTree = "<group>";
 		};
+		C63341063579C6C4A7E77DAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C042BAA117C366E1B45BE74E /* Pods-SinaWeibo_swift.debug.xcconfig */,
+				B56EF414E9E1E47CD8AE4D76 /* Pods-SinaWeibo_swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DE5B043F1DB4CDFE0034520D = {
 			isa = PBXGroup;
 			children = (
 				DE5B044A1DB4CDFE0034520D /* SinaWeibo_swift */,
 				DE5B04491DB4CDFE0034520D /* Products */,
+				C63341063579C6C4A7E77DAF /* Pods */,
+				FF6B221717DC5D81E46BA6AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +228,14 @@
 			path = Visitor;
 			sourceTree = "<group>";
 		};
+		FF6B221717DC5D81E46BA6AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A3C894A2308770BDB714815 /* Pods_SinaWeibo_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,9 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5B045A1DB4CDFE0034520D /* Build configuration list for PBXNativeTarget "SinaWeibo_swift" */;
 			buildPhases = (
+				AC2589BC4A05500ADE9C047D /* [CP] Check Pods Manifest.lock */,
 				DE5B04441DB4CDFE0034520D /* Sources */,
 				DE5B04451DB4CDFE0034520D /* Frameworks */,
 				DE5B04461DB4CDFE0034520D /* Resources */,
+				8D74749806ABF5EFE7D4B886 /* [CP] Embed Pods Frameworks */,
+				F1D4A5ADCBA7D7EA69CB7B5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,6 +312,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D74749806ABF5EFE7D4B886 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2589BC4A05500ADE9C047D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1D4A5ADCBA7D7EA69CB7B5D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE5B04441DB4CDFE0034520D /* Sources */ = {
@@ -431,6 +506,7 @@
 		};
 		DE5B045B1DB4CDFE0034520D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C042BAA117C366E1B45BE74E /* Pods-SinaWeibo_swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -444,6 +520,7 @@
 		};
 		DE5B045C1DB4CDFE0034520D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56EF414E9E1E47CD8AE4D76 /* Pods-SinaWeibo_swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
