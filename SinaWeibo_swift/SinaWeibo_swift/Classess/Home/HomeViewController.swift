@@ -19,6 +19,10 @@ class HomeViewController: BaseViewController {
     private lazy var popoviewAnimator : PopoverAnimator = PopoverAnimator {[weak self] (presented) -> () in
         self?.titleBtn.selected = presented
     }
+    
+    private lazy var ViewModels : [StatusViewModel] = [StatusViewModel]()
+    
+    
      //MARK: --系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,9 @@ class HomeViewController: BaseViewController {
         }
         //2. 设置导航栏的内容
         setupNavigationBar()
+        
+        //3.请求数据
+        loadStatues()
     }
 
    
@@ -55,8 +62,6 @@ extension HomeViewController {
         titleBtn.setTitle("archy", forState: .Normal)
         titleBtn.addTarget(self, action: "titilBtnClick:", forControlEvents: .TouchUpInside)
         navigationItem.titleView = titleBtn
-        
-        
         
     }
 }
@@ -85,11 +90,62 @@ extension HomeViewController {
 }
 
 
+ //MARK: --请求数据
+extension HomeViewController {
+    private func loadStatues(){
+    
+    NetworkTools.shareInstance.loadStatuese { (result, error) -> () in
+        
+            //1.错误校验
+            if error != nil {
+              print(error)
+                return
+              
+              }
+            //2.获取可选类型中的数据
+            guard let resultArray = result else {
+             return
+            }
+            
+            //3.遍历微博对应的字典
+            
+            for statusDict in resultArray {
+              let status = Status(dict: statusDict)
+                let viewModel = StatusViewModel(status: status)
+                self.ViewModels.append(viewModel)
+             }
+        
+            //4.刷新表格
+            self.tableView.reloadData()
+                
+            }
+    }
+
+}
 
 
 
+ //MARK: --tableview的数据源方法
+extension HomeViewController {
 
-
+  override    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ViewModels.count
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        //1.创建cell
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell") as! HomeViewCell
+        
+        //2.给cell设置数据
+        let viewmodel = ViewModels[indexPath.row]
+        cell.viewModel = viewmodel
+        
+        return cell
+    }
+}
 
 
 

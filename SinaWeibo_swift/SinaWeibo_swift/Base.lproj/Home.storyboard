@@ -2,17 +2,111 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="glg-Ro-BLm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--首页-->
         <scene sceneID="yd8-uW-yAo">
             <objects>
                 <tableViewController id="PM8-E6-IJ6" customClass="HomeViewController" customModule="SinaWeibo_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wjp-QJ-XhX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="290" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wjp-QJ-XhX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="290" id="56v-nH-F2s" customClass="HomeViewCell" customModule="SinaWeibo_swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="290"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="56v-nH-F2s" id="k0u-C5-WEl">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="289"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_small" translatesAutoresizingMaskIntoConstraints="NO" id="DFF-ti-Rem" userLabel="头像">
+                                            <rect key="frame" x="23" y="23" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Vo7-fZ-JRJ"/>
+                                                <constraint firstAttribute="width" constant="40" id="Z0w-sG-1Um"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="vUc-RP-YZy" userLabel="认证图标">
+                                            <rect key="frame" x="46" y="46" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="WUt-eH-TRp"/>
+                                                <constraint firstAttribute="height" constant="17" id="qWB-LT-3Tv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我勒个去啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIf-gE-TyW" userLabel="昵称">
+                                            <rect key="frame" x="78" y="23" width="85" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership_level1" translatesAutoresizingMaskIntoConstraints="NO" id="XJ8-y8-ijf" userLabel="会员图标">
+                                            <rect key="frame" x="171" y="27" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="14" id="0jr-My-0qb"/>
+                                                <constraint firstAttribute="height" constant="14" id="RwX-wX-lMo"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkP-33-b3v" userLabel="时间Label">
+                                            <rect key="frame" x="78" y="47" width="54" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自iPhone7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdC-PY-S7m" userLabel="来源Label">
+                                            <rect key="frame" x="140" y="46" width="80" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="哟，小伙子，今天天气不错哟" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vp1-y6-syt" userLabel="正文label">
+                                            <rect key="frame" x="23" y="97" width="105" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="105" id="gNS-E6-r5e"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SIf-gE-TyW" firstAttribute="top" secondItem="DFF-ti-Rem" secondAttribute="top" id="0PE-R2-1a2"/>
+                                        <constraint firstItem="XJ8-y8-ijf" firstAttribute="trailing" secondItem="SIf-gE-TyW" secondAttribute="trailing" constant="22" id="5MO-A7-Jsk"/>
+                                        <constraint firstItem="XJ8-y8-ijf" firstAttribute="centerY" secondItem="SIf-gE-TyW" secondAttribute="centerY" id="76n-PH-T3L"/>
+                                        <constraint firstItem="Vp1-y6-syt" firstAttribute="top" secondItem="cdC-PY-S7m" secondAttribute="bottom" constant="34" id="AL8-nt-FKa"/>
+                                        <constraint firstItem="DFF-ti-Rem" firstAttribute="leading" secondItem="k0u-C5-WEl" secondAttribute="leadingMargin" constant="15" id="DJw-AI-U09"/>
+                                        <constraint firstItem="cdC-PY-S7m" firstAttribute="trailing" secondItem="zkP-33-b3v" secondAttribute="trailing" constant="88" id="DZ8-CU-Lqs"/>
+                                        <constraint firstItem="SIf-gE-TyW" firstAttribute="leading" secondItem="DFF-ti-Rem" secondAttribute="trailing" constant="15" id="E9J-GP-zaO"/>
+                                        <constraint firstItem="Vp1-y6-syt" firstAttribute="leading" secondItem="DFF-ti-Rem" secondAttribute="leading" id="GPS-3Y-Tyv"/>
+                                        <constraint firstItem="zkP-33-b3v" firstAttribute="trailing" secondItem="DFF-ti-Rem" secondAttribute="trailing" constant="69" id="V6S-C1-d9n"/>
+                                        <constraint firstItem="vUc-RP-YZy" firstAttribute="bottom" secondItem="DFF-ti-Rem" secondAttribute="bottom" id="Wwb-9g-tTm"/>
+                                        <constraint firstItem="zkP-33-b3v" firstAttribute="top" secondItem="SIf-gE-TyW" secondAttribute="bottom" constant="3" id="ZwC-C4-nql"/>
+                                        <constraint firstItem="cdC-PY-S7m" firstAttribute="top" secondItem="zkP-33-b3v" secondAttribute="top" constant="-1" id="e6P-UY-a7n"/>
+                                        <constraint firstItem="vUc-RP-YZy" firstAttribute="trailing" secondItem="DFF-ti-Rem" secondAttribute="trailing" id="rkn-2Z-uIu"/>
+                                        <constraint firstItem="DFF-ti-Rem" firstAttribute="top" secondItem="k0u-C5-WEl" secondAttribute="topMargin" constant="15" id="rpO-sq-ldY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Vp1-y6-syt" secondAttribute="bottom" constant="15" id="tV9-Jx-qie"/>
+                                        <constraint firstItem="zkP-33-b3v" firstAttribute="top" secondItem="k0u-C5-WEl" secondAttribute="topMargin" constant="39" id="uE3-xx-80t"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="tV9-Jx-qie"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="Vp1-y6-syt" id="ltZ-bZ-WeM"/>
+                                    <outlet property="contentLabelWCons" destination="gNS-E6-r5e" id="Cix-6Y-e6a"/>
+                                    <outlet property="iconView" destination="DFF-ti-Rem" id="gwC-Fi-Hx3"/>
+                                    <outlet property="screenNameLabel" destination="SIf-gE-TyW" id="kKX-ky-y7G"/>
+                                    <outlet property="sourceLabel" destination="cdC-PY-S7m" id="8bt-WQ-Hhv"/>
+                                    <outlet property="timeLabel" destination="zkP-33-b3v" id="BMe-Pq-W3D"/>
+                                    <outlet property="verifiedView" destination="vUc-RP-YZy" id="ofj-uM-6gr"/>
+                                    <outlet property="vipView" destination="XJ8-y8-ijf" id="drZ-Fy-HTu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="PM8-E6-IJ6" id="h8b-6j-g6I"/>
                             <outlet property="delegate" destination="PM8-E6-IJ6" id="FAt-yG-tuH"/>
@@ -44,6 +138,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar_default_small" width="34" height="34"/>
+        <image name="avatar_vip" width="17" height="17"/>
+        <image name="common_icon_membership_level1" width="14" height="14"/>
         <image name="tabbar_home" width="30" height="30"/>
         <image name="tabbar_home_highlighted" width="30" height="30"/>
     </resources>

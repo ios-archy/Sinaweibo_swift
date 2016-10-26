@@ -14,7 +14,7 @@ class BaseViewController: UITableViewController {
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
     // MARK:- 定义变量
-    var isLogin : Bool = false
+    var isLogin : Bool =  UserAccountViewModel.shareInstance.isLogin
     
     // MARK:- 系统调用函数
     override func loadView() {
