@@ -306,7 +306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5B045A1DB4CDFE0034520D /* Build configuration list for PBXNativeTarget "SinaWeibo_swift" */;
 			buildPhases = (
-				017D40D14F515B7647397625 /* 📦 Check Pods Manifest.lock */,
+				017D40D14F515B7647397625 /* [CP] Check Pods Manifest.lock */,
 				AC2589BC4A05500ADE9C047D /* [CP] Check Pods Manifest.lock */,
 				DE5B04441DB4CDFE0034520D /* Sources */,
 				DE5B04451DB4CDFE0034520D /* Frameworks */,
@@ -382,14 +382,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		017D40D14F515B7647397625 /* 📦 Check Pods Manifest.lock */ = {
+		017D40D14F515B7647397625 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
