@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2822F5F51DC347DE00CF0B92 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822F5F41DC347DE00CF0B92 /* PicCollectionView.swift */; };
 		282662871DB9FE1E005B657D /* ArchyPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282662861DB9FE1E005B657D /* ArchyPresentationController.swift */; };
 		282662891DBA0453005B657D /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282662881DBA0453005B657D /* PopoverViewController.swift */; };
 		2826628B1DBA045F005B657D /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2826628A1DBA045F005B657D /* PopoverViewController.xib */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2822F5F41DC347DE00CF0B92 /* PicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		282662861DB9FE1E005B657D /* ArchyPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchyPresentationController.swift; sourceTree = "<group>"; };
 		282662881DBA0453005B657D /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		2826628A1DBA045F005B657D /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				28F3E36C1DC08E5B009B1423 /* HomeModel */,
 				2849F3051DB8B993009A8149 /* Popover */,
 				DE1419331DB66E74003F3C40 /* Home.storyboard */,
+				2822F5F41DC347DE00CF0B92 /* PicCollectionView.swift */,
 				DE5B04651DB4CF970034520D /* HomeViewController.swift */,
 				28F3E3751DC0AA3A009B1423 /* HomeViewCell.swift */,
 			);
@@ -306,6 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5B045A1DB4CDFE0034520D /* Build configuration list for PBXNativeTarget "SinaWeibo_swift" */;
 			buildPhases = (
+				962D93CF685BDE89D270555F /* 📦 Check Pods Manifest.lock */,
 				017D40D14F515B7647397625 /* [CP] Check Pods Manifest.lock */,
 				AC2589BC4A05500ADE9C047D /* [CP] Check Pods Manifest.lock */,
 				DE5B04441DB4CDFE0034520D /* Sources */,
@@ -442,6 +446,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		962D93CF685BDE89D270555F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AC2589BC4A05500ADE9C047D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,6 +517,7 @@
 				28F3E3741DC0A026009B1423 /* StatusViewModel.swift in Sources */,
 				28F3E3761DC0AA3A009B1423 /* HomeViewCell.swift in Sources */,
 				28F3E3661DC06003009B1423 /* UserAccountViewModel.swift in Sources */,
+				2822F5F51DC347DE00CF0B92 /* PicCollectionView.swift in Sources */,
 				DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */,
 				DE74D7E41DB7C70F009E4E69 /* VisitorView.swift in Sources */,
 				DE5B04661DB4CF970034520D /* HomeViewController.swift in Sources */,

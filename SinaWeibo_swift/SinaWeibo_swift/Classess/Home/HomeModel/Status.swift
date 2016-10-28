@@ -16,8 +16,8 @@ class Status : NSObject {
     var source : String?     //微博来源
     var text :String?        //微博正文
     var mid : Int = 0        //微博的id
-    var user : User?
-    
+    var user : User?         //微博对应的用户
+    var pic_urls : [[String : String]]? //微博的配图
      //MARK: --对数据的处理的属性
     var sourceText : String?
     var createAtText : String?

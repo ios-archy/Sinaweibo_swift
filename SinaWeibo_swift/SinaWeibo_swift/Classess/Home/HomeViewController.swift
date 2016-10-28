@@ -39,7 +39,7 @@ class HomeViewController: BaseViewController {
         loadStatues()
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+        tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = 200
     }
 

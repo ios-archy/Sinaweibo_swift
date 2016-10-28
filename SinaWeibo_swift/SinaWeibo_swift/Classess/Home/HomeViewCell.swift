@@ -11,6 +11,7 @@ import UIKit
 
 private let edgeMargin : CGFloat = 15
 
+private let itemMargin : CGFloat = 10
 class HomeViewCell: UITableViewCell {
     
     
@@ -28,6 +29,8 @@ class HomeViewCell: UITableViewCell {
     
     
      //MARK: --自定义属性
+    @IBOutlet weak var picViewHcons: NSLayoutConstraint!
+    @IBOutlet weak var picViewCons: NSLayoutConstraint!
     
     var viewModel : StatusViewModel? {
     
@@ -59,6 +62,11 @@ class HomeViewCell: UITableViewCell {
             
             //8.设置昵称的颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.blackColor() : UIColor.orangeColor()
+            
+            //9.计算picviewSize 的宽度和高度约束
+            let picViewSize  = calculatePicViewSize(viewModel.picUrls.count)
+            picViewCons.constant  = picViewSize.width
+            picViewHcons.constant = picViewSize.height
         }
         
     }
@@ -69,6 +77,41 @@ class HomeViewCell: UITableViewCell {
         
         //设置微博正文的宽度约束
         contentLabelWCons.constant = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
+    }
+    
+}
+
+
+ //MARK: --picView高度计算
+extension HomeViewCell
+{
+    private func calculatePicViewSize(count : Int) -> CGSize {
+    
+        //1.没有配图
+        if count == 0  {
+        return CGSizeZero
+        }
+        
+        //2.计算出来imageViewWH
+        let imageViewWH = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
+        
+        //3.四张图
+        if count == 4 {
+        let picViewWH = imageViewWH * 2 + itemMargin
+            return CGSize(width: picViewWH, height: picViewWH)
+        }
+        
+        //4.其他张配图
+        //4.1计算行数
+        let rows = CGFloat((count - 1 ) / 3 + 1)
+        
+        //4.2计算picview的高度
+        let picViewH = rows * imageViewWH + (rows - 1) * itemMargin
+        
+        //4.3计算picview的宽度
+        let picViewW = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
+        
+        return CGSize(width: picViewW, height: picViewH)
     }
     
 }
