@@ -66,7 +66,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="105" id="gNS-E6-r5e"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -140,7 +140,7 @@
                                         </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CRX-Qm-lAD" customClass="PicCollectionView" customModule="SinaWeibo_swift" customModuleProvider="target">
                                             <rect key="frame" x="23" y="185" width="240" height="74"/>
-                                            <color key="backgroundColor" red="0.94901960780000005" green="0.43137254899999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="CXy-v4-b6j"/>
                                                 <constraint firstAttribute="height" constant="74" id="Nk0-hD-fKL"/>
@@ -152,7 +152,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="J55-p4-fFz" userLabel="picCell" customClass="PicCollectionViewCell" customModule="SinaWeibo_swift" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="J55-p4-fFz" userLabel="picCell" customClass="PicCollectionViewCell" customModule="SinaWeibo_swift" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -215,6 +215,7 @@
                                     <outlet property="contentLabel" destination="Vp1-y6-syt" id="ltZ-bZ-WeM"/>
                                     <outlet property="contentLabelWCons" destination="gNS-E6-r5e" id="Cix-6Y-e6a"/>
                                     <outlet property="iconView" destination="DFF-ti-Rem" id="gwC-Fi-Hx3"/>
+                                    <outlet property="picView" destination="CRX-Qm-lAD" id="h8Z-Eq-id4"/>
                                     <outlet property="picViewCons" destination="CXy-v4-b6j" id="x29-Um-eM3"/>
                                     <outlet property="picViewHcons" destination="Nk0-hD-fKL" id="vvp-Cc-25N"/>
                                     <outlet property="screenNameLabel" destination="SIf-gE-TyW" id="kKX-ky-y7G"/>
