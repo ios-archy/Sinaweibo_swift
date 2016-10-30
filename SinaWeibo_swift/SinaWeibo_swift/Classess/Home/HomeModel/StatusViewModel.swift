@@ -14,6 +14,8 @@ class StatusViewModel: NSObject {
     
     var status : Status?
     
+    var cellHeight  :CGFloat = 0
+    
      //MARK: --对数据处理的属性
     var soureceText : String? //处理来源
     var createAtText : String?  //处理创建时间
@@ -68,7 +70,9 @@ class StatusViewModel: NSObject {
         profileURL = NSURL(string: profileURLString)
         
         //6.处理配图数据
-        if let picURLDicts = status.pic_urls {
+        let picURLDicts = status.pic_urls!.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        
+         if let picURLDicts = picURLDicts {
         
             for picURLDict in picURLDicts {
                 guard let picURLString = picURLDict["thumbnail_pic"] else {

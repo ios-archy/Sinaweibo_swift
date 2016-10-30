@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 private let edgeMargin : CGFloat = 15
 
@@ -25,17 +25,28 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picView: PicCollectionView!
     
+    
+    
+    
+    
+    
+    
      //MARK: --约束属性
+    @IBOutlet weak var bottomToolView: UIView!
     @IBOutlet weak var contentLabelWCons: NSLayoutConstraint!
     
     
      //MARK: --自定义属性
-    @IBOutlet weak var picViewHcons: NSLayoutConstraint!
-    @IBOutlet weak var picViewCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetedContentLabel: UILabel!
     
+    @IBOutlet weak var picViewHcons: NSLayoutConstraint!
+    @IBOutlet weak var retweetedBgView: UIView!
+    @IBOutlet weak var picViewCons: NSLayoutConstraint!
+     @IBOutlet   weak var picViewBottomCons: NSLayoutConstraint!
     var viewModel : StatusViewModel? {
     
         didSet {
+          
         
             //1.nil值校验
             guard let viewModel = viewModel else {
@@ -71,6 +82,32 @@ class HomeViewCell: UITableViewCell {
             
             //10.将picURL数据传递给picview
             picView.picURLs = viewModel.picUrls
+            
+            //11。设置转发微博的正文
+            if viewModel.status?.retweeted_status != nil {
+                
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, retweetedText = viewModel.status?.retweeted_status?.text {
+                  retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText
+                }
+                
+                //设置背景颜色显示
+                retweetedBgView.hidden = false
+            }
+            else {
+                retweetedContentLabel.text = nil
+                
+                //2.设置背景显示
+                retweetedBgView.hidden = true
+            }
+            
+            //12.计算cell的高度
+            if viewModel.cellHeight == 0 {
+            //12.1强制布局
+                layoutIfNeeded()
+                
+                //12.2获取底部工具栏的最大Y值
+                viewModel.cellHeight = CGRectGetMaxY(bottomToolView.frame)
+            }
         }
         
     }
@@ -82,11 +119,11 @@ class HomeViewCell: UITableViewCell {
         //设置微博正文的宽度约束
         contentLabelWCons.constant = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
         
-        //取出picView对应的layout
-        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        let imageViewWH = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
-        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+//        //取出picView对应的layout
+//        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+//        
+//        let imageViewWH = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
+//        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
     }
     
 }
@@ -99,12 +136,31 @@ extension HomeViewCell
     
         //1.没有配图
         if count == 0  {
+            picViewBottomCons.constant = 0
         return CGSizeZero
         }
         
+        picViewBottomCons.constant  = 10
+        //2. 取出picView对应的layout
+        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        //3.单张配图
+        if count == 1 {
+        
+            //1取出图片
+            let urlString = viewModel?.picUrls.last?.absoluteString
+            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(urlString)
+            
+            //2.设置一张图片是layout的itemsize
+            layout.itemSize = CGSize(width: image.size.width * 2, height: image.size.height * 2)
+            
+            return CGSize(width: image.size.width * 2, height: image.size.height * 2)
+        }
         //2.计算出来imageViewWH
         let imageViewWH = (UIScreen.mainScreen().bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
         
+        
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         //3.四张图
         if count == 4 {
         let picViewWH = imageViewWH * 2 + itemMargin

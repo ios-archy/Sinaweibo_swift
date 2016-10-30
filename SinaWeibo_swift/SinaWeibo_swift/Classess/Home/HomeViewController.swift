@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class HomeViewController: BaseViewController {
 
      //MARK: --属性
@@ -38,8 +38,8 @@ class HomeViewController: BaseViewController {
         //3.请求数据
         loadStatues()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.showsVerticalScrollIndicator = false
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = 200
     }
 
@@ -119,10 +119,36 @@ extension HomeViewController {
                 self.ViewModels.append(viewModel)
              }
         
-            //4.刷新表格
-            self.tableView.reloadData()
-                
+            //4.缓存图片
+           self.cacheImages(self.ViewModels)
+        
+        }
+    }
+    
+    private func cacheImages(viewModels : [StatusViewModel]){
+         //0.创建group
+        let group = dispatch_group_create()
+        
+        //1.缓存图片
+        for viewModel in ViewModels {
+        
+            for picUrl in viewModel.picUrls {
+            
+                dispatch_group_enter(group)
+                SDWebImageManager.sharedManager().downloadImageWithURL(picUrl, options: [], progress: nil, completed: { (_, _, _, _, _) -> Void in
+//                    print("下载了一张图：\(picUrl)")
+                    dispatch_group_leave(group)
+                })
             }
+        }
+        
+        //2.刷新表格
+        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
+            
+//            print("刷新表格")
+            self.tableView.reloadData()
+        }
+        
     }
 
 }
@@ -148,6 +174,14 @@ extension HomeViewController {
         cell.viewModel = viewmodel
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        //1.获取模型对象
+        let viewmodel = ViewModels[indexPath.row]
+        print("\(viewmodel.cellHeight)")
+        return viewmodel.cellHeight
     }
 }
 
