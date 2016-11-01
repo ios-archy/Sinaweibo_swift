@@ -69,8 +69,10 @@ class HomeViewCell: UITableViewCell {
             //6.设置时间的lable
             timeLabel.text = viewModel.createAtText
             
-            //7.设置来源
+            //7.设置正文
             contentLabel.text = viewModel.status?.text
+            
+            sourceLabel.text = viewModel.soureceText
             
             //8.设置昵称的颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.blackColor() : UIColor.orangeColor()
