@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
 class HomeViewController: BaseViewController {
 
      //MARK: --属性
@@ -35,12 +36,16 @@ class HomeViewController: BaseViewController {
         //2. 设置导航栏的内容
         setupNavigationBar()
         
-        //3.请求数据
-        loadStatues()
+        //3.设置高度
+//        loadStatues()
         
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.showsVerticalScrollIndicator = false
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.showsVerticalScrollIndicator = false
         tableView.estimatedRowHeight = 200
+        
+        //4.布局header
+        
+        setUpHeaderView()
     }
 
    
@@ -67,6 +72,23 @@ extension HomeViewController {
         titleBtn.addTarget(self, action: "titilBtnClick:", forControlEvents: .TouchUpInside)
         navigationItem.titleView = titleBtn
         
+    }
+    
+    private func setUpHeaderView() {
+    
+        //1.创建header
+        let header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "loadNewStatuses")
+        
+        //2.设置header的属性
+        header.setTitle("下拉刷新", forState: .Idle)
+        header.setTitle("释放更新", forState: .Pulling)
+        header.setTitle("加载中。。。", forState: .Refreshing)
+        
+        //3.设置tabelview的header
+        tableView.mj_header = header
+        
+        //4.进入刷新状态
+        tableView.mj_header.beginRefreshing()
     }
 }
 
@@ -96,9 +118,22 @@ extension HomeViewController {
 
  //MARK: --请求数据
 extension HomeViewController {
-    private func loadStatues(){
     
-    NetworkTools.shareInstance.loadStatuese { (result, error) -> () in
+    //加载最新数据  
+    @objc private func loadNewStatuses(){
+    
+        loadStatues(true)
+    }
+    
+    private func loadStatues(isNewdata :Bool){
+    
+        //1.获取since_id
+        var since_id = 0
+        if isNewdata {
+          since_id = ViewModels.first?.status?.mid ?? 0
+        }
+        
+    NetworkTools.shareInstance.loadStatuese(since_id) { (result, error) -> () in
         
             //1.错误校验
             if error != nil {
@@ -147,6 +182,7 @@ extension HomeViewController {
             
 //            print("刷新表格")
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
         }
         
     }
@@ -176,13 +212,13 @@ extension HomeViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        //1.获取模型对象
-        let viewmodel = ViewModels[indexPath.row]
-        print("\(viewmodel.cellHeight)")
-        return viewmodel.cellHeight
-    }
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//        //1.获取模型对象
+//        let viewmodel = ViewModels[indexPath.row]
+//        print("\(viewmodel.cellHeight)")
+//        return viewmodel.cellHeight
+//    }
 }
 
 
