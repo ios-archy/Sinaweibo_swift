@@ -46,6 +46,7 @@ class HomeViewController: BaseViewController {
         //4.布局header
         
         setUpHeaderView()
+        setUpFooterView()
     }
 
    
@@ -90,6 +91,11 @@ extension HomeViewController {
         //4.进入刷新状态
         tableView.mj_header.beginRefreshing()
     }
+    
+    private func setUpFooterView(){
+    
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: "loadMoreStatuses")
+    }
 }
 
 
@@ -125,15 +131,26 @@ extension HomeViewController {
         loadStatues(true)
     }
     
+    @objc private func loadMoreStatuses(){
+    
+        loadStatues(false)
+    }
+    
     private func loadStatues(isNewdata :Bool){
     
         //1.获取since_id
         var since_id = 0
+        var max_id = 0
         if isNewdata {
           since_id = ViewModels.first?.status?.mid ?? 0
         }
+        else
+        {
+            max_id = ViewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
+        }
         
-    NetworkTools.shareInstance.loadStatuese(since_id) { (result, error) -> () in
+        NetworkTools.shareInstance.loadStatuese(since_id,max_id : max_id) { (result, error) -> () in
         
             //1.错误校验
             if error != nil {
@@ -147,15 +164,25 @@ extension HomeViewController {
             }
             
             //3.遍历微博对应的字典
-            
+            var temViewModel = [StatusViewModel]()
             for statusDict in resultArray {
               let status = Status(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
-                self.ViewModels.append(viewModel)
+//                self.ViewModels.append(viewModel)
+                temViewModel.append(viewModel)
              }
-        
+           
+            //4.将数据放入到成员变量的数组中
+            if isNewdata {
+                self.ViewModels = temViewModel + self.ViewModels
+            }
+            else
+            {
+                self.ViewModels += temViewModel
+            }
+            
             //4.缓存图片
-           self.cacheImages(self.ViewModels)
+           self.cacheImages(temViewModel)
         
         }
     }
@@ -183,6 +210,7 @@ extension HomeViewController {
 //            print("刷新表格")
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
         
     }
