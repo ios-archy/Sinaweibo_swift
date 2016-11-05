@@ -29,6 +29,8 @@
 		28F3E3741DC0A026009B1423 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F3E3731DC0A026009B1423 /* StatusViewModel.swift */; };
 		28F3E3761DC0AA3A009B1423 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F3E3751DC0AA3A009B1423 /* HomeViewCell.swift */; };
 		57FCBA60A2B19360514DEE3E /* Pods_SinaWeibo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3C894A2308770BDB714815 /* Pods_SinaWeibo_swift.framework */; };
+		DE0A82E61DCE2E830063F038 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0A82E41DCE2E830063F038 /* ComposeViewController.swift */; };
+		DE0A82E71DCE2E830063F038 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0A82E51DCE2E830063F038 /* ComposeViewController.xib */; };
 		DE1419351DB66E74003F3C40 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419331DB66E74003F3C40 /* Home.storyboard */; };
 		DE1419371DB66EB0003F3C40 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419361DB66EB0003F3C40 /* Message.storyboard */; };
 		DE14193A1DB66EC4003F3C40 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419381DB66EC4003F3C40 /* Discover.storyboard */; };
@@ -74,6 +76,8 @@
 		3A3C894A2308770BDB714815 /* Pods_SinaWeibo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaWeibo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56EF414E9E1E47CD8AE4D76 /* Pods-SinaWeibo_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeibo_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift.release.xcconfig"; sourceTree = "<group>"; };
 		C042BAA117C366E1B45BE74E /* Pods-SinaWeibo_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaWeibo_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0A82E41DCE2E830063F038 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		DE0A82E51DCE2E830063F038 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		DE1419341DB66E74003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		DE1419361DB66EB0003F3C40 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		DE1419391DB66EC4003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -168,6 +172,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DE0A82E31DCE2DEE0063F038 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				DE0A82E41DCE2E830063F038 /* ComposeViewController.swift */,
+				DE0A82E51DCE2E830063F038 /* ComposeViewController.xib */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		DE5B043F1DB4CDFE0034520D = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +215,7 @@
 		DE5B045D1DB4CF6A0034520D /* Classess */ = {
 			isa = PBXGroup;
 			children = (
+				DE0A82E31DCE2DEE0063F038 /* Compose */,
 				DE74D7DD1DB7B98B009E4E69 /* Tools */,
 				DE5B04601DB4CF6A0034520D /* Main */,
 				DE5B045E1DB4CF6A0034520D /* Discover */,
@@ -379,6 +393,7 @@
 				2826628B1DBA045F005B657D /* PopoverViewController.xib in Resources */,
 				DE1419411DB67A87003F3C40 /* Null.storyboard in Resources */,
 				DE1419371DB66EB0003F3C40 /* Message.storyboard in Resources */,
+				DE0A82E71DCE2E830063F038 /* ComposeViewController.xib in Resources */,
 				DE14193A1DB66EC4003F3C40 /* Discover.storyboard in Resources */,
 				DE5B04511DB4CDFE0034520D /* Main.storyboard in Resources */,
 			);
@@ -523,6 +538,7 @@
 				2849F2FE1DB8A333009A8149 /* UIButton-Extension.swift in Sources */,
 				282662891DBA0453005B657D /* PopoverViewController.swift in Sources */,
 				2849F3041DB8B148009A8149 /* UIBarButtonItem-Extension.swift in Sources */,
+				DE0A82E61DCE2E830063F038 /* ComposeViewController.swift in Sources */,
 				28500DB31DBF2B5C00FC7C1D /* OAuthViewController.swift in Sources */,
 				DE5B044C1DB4CDFE0034520D /* AppDelegate.swift in Sources */,
 				DE5B04681DB4CFA10034520D /* DisCoverViewController.swift in Sources */,
