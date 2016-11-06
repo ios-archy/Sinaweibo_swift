@@ -36,6 +36,8 @@
 		DE14193A1DB66EC4003F3C40 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419381DB66EC4003F3C40 /* Discover.storyboard */; };
 		DE14193C1DB66EEA003F3C40 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE14193B1DB66EEA003F3C40 /* Profile.storyboard */; };
 		DE1419411DB67A87003F3C40 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1419401DB67A87003F3C40 /* Null.storyboard */; };
+		DE51876F1DCF6E46000F485D /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51876E1DCF6E46000F485D /* ComposeTitleView.swift */; };
+		DE5187711DCF7411000F485D /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5187701DCF7411000F485D /* ComposeTextView.swift */; };
 		DE5B044C1DB4CDFE0034520D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5B044B1DB4CDFE0034520D /* AppDelegate.swift */; };
 		DE5B04511DB4CDFE0034520D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5B044F1DB4CDFE0034520D /* Main.storyboard */; };
 		DE5B04531DB4CDFE0034520D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5B04521DB4CDFE0034520D /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		DE1419391DB66EC4003F3C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		DE14193B1DB66EEA003F3C40 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		DE1419401DB67A87003F3C40 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Null.storyboard; path = ../../../Null.storyboard; sourceTree = "<group>"; };
+		DE51876E1DCF6E46000F485D /* ComposeTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		DE5187701DCF7411000F485D /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
 		DE5B04481DB4CDFE0034520D /* SinaWeibo_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5B044B1DB4CDFE0034520D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE5B04501DB4CDFE0034520D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 			children = (
 				DE0A82E41DCE2E830063F038 /* ComposeViewController.swift */,
 				DE0A82E51DCE2E830063F038 /* ComposeViewController.xib */,
+				DE51876E1DCF6E46000F485D /* ComposeTitleView.swift */,
+				DE5187701DCF7411000F485D /* ComposeTextView.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -533,6 +539,7 @@
 				28F3E36A1DC07B69009B1423 /* WelcomeViewController.swift in Sources */,
 				28F3E36E1DC08E71009B1423 /* Status.swift in Sources */,
 				28500DB91DBF383400FC7C1D /* NetworkTools.swift in Sources */,
+				DE51876F1DCF6E46000F485D /* ComposeTitleView.swift in Sources */,
 				28500DBB1DBF438400FC7C1D /* UserAccount.swift in Sources */,
 				DE5B046C1DB4CFB20034520D /* ProfileViewController.swift in Sources */,
 				2849F2FE1DB8A333009A8149 /* UIButton-Extension.swift in Sources */,
@@ -544,6 +551,7 @@
 				DE5B04681DB4CFA10034520D /* DisCoverViewController.swift in Sources */,
 				28F3E3701DC094BF009B1423 /* NSDate-Extension.swift in Sources */,
 				DE5B04641DB4CF8E0034520D /* MainViewController.swift in Sources */,
+				DE5187711DCF7411000F485D /* ComposeTextView.swift in Sources */,
 				282662871DB9FE1E005B657D /* ArchyPresentationController.swift in Sources */,
 				285591A21DBA1DC8006F376D /* PopoverAnimator.swift in Sources */,
 				28F3E3741DC0A026009B1423 /* StatusViewModel.swift in Sources */,

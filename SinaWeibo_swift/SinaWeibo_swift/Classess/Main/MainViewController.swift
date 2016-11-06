@@ -56,7 +56,14 @@ extension MainViewController {
     //如果在priv 前面加上objc，那么该方法依然会被添加到方法列表中
  @objc private  func composeBtnClick(){
     
-      print("composeBtnClick")
+     //1.创建发布控制器
+    let compseVc = ComposeViewController()
+    
+    //2.包装导航控制器
+    let composeNav = UINavigationController(rootViewController: compseVc)
+    
+    //3.弹出控制器
+    presentViewController(composeNav, animated: true, completion: nil)
     }
 
 }
