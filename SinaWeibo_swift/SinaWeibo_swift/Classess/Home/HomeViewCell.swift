@@ -43,6 +43,10 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var retweetedBgView: UIView!
     @IBOutlet weak var picViewCons: NSLayoutConstraint!
      @IBOutlet   weak var picViewBottomCons: NSLayoutConstraint!
+    
+    @IBOutlet weak var retweetedContentLabelTopCons: NSLayoutConstraint!
+    
+    
     var viewModel : StatusViewModel? {
     
         didSet {
@@ -90,6 +94,9 @@ class HomeViewCell: UITableViewCell {
                 
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, retweetedText = viewModel.status?.retweeted_status?.text {
                   retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText
+                    
+                    //设置转发正文距离顶部的约束
+                    retweetedContentLabelTopCons.constant = 15
                 }
                 
                 //设置背景颜色显示
@@ -100,6 +107,9 @@ class HomeViewCell: UITableViewCell {
                 
                 //2.设置背景显示
                 retweetedBgView.hidden = true
+                
+                //3.设置转发正文距离顶部的约束
+                retweetedContentLabelTopCons.constant = 0;
             }
             
             //12.计算cell的高度

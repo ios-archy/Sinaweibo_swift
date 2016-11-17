@@ -230,6 +230,7 @@
                                     <outlet property="picViewHcons" destination="Nk0-hD-fKL" id="vvp-Cc-25N"/>
                                     <outlet property="retweetedBgView" destination="O40-GV-iva" id="31F-3t-XQT"/>
                                     <outlet property="retweetedContentLabel" destination="rhY-ma-8up" id="XzZ-1P-MOC"/>
+                                    <outlet property="retweetedContentLabelTopCons" destination="pwy-pS-Yct" id="8Dz-gc-w8Y"/>
                                     <outlet property="screenNameLabel" destination="SIf-gE-TyW" id="kKX-ky-y7G"/>
                                     <outlet property="sourceLabel" destination="cdC-PY-S7m" id="8bt-WQ-Hhv"/>
                                     <outlet property="timeLabel" destination="zkP-33-b3v" id="BMe-Pq-W3D"/>

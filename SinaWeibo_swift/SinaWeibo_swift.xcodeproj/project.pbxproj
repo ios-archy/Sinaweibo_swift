@@ -20,6 +20,9 @@
 		28500DB91DBF383400FC7C1D /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28500DB81DBF383400FC7C1D /* NetworkTools.swift */; };
 		28500DBB1DBF438400FC7C1D /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28500DBA1DBF438400FC7C1D /* UserAccount.swift */; };
 		285591A21DBA1DC8006F376D /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285591A11DBA1DC8006F376D /* PopoverAnimator.swift */; };
+		28BACF0D1DDDAAD30064FF6B /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BACF0A1DDDAAD30064FF6B /* PicPickerCollectionView.swift */; };
+		28BACF0E1DDDAAD30064FF6B /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BACF0B1DDDAAD30064FF6B /* PicPickerViewCell.swift */; };
+		28BACF0F1DDDAAD30064FF6B /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BACF0C1DDDAAD30064FF6B /* PicPickerViewCell.xib */; };
 		28F3E3661DC06003009B1423 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F3E3651DC06003009B1423 /* UserAccountViewModel.swift */; };
 		28F3E36A1DC07B69009B1423 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F3E3681DC07B69009B1423 /* WelcomeViewController.swift */; };
 		28F3E36B1DC07B69009B1423 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F3E3691DC07B69009B1423 /* WelcomeViewController.xib */; };
@@ -67,6 +70,9 @@
 		28500DB81DBF383400FC7C1D /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		28500DBA1DBF438400FC7C1D /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		285591A11DBA1DC8006F376D /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		28BACF0A1DDDAAD30064FF6B /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		28BACF0B1DDDAAD30064FF6B /* PicPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		28BACF0C1DDDAAD30064FF6B /* PicPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		28F3E3651DC06003009B1423 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		28F3E3681DC07B69009B1423 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		28F3E3691DC07B69009B1423 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -148,6 +154,16 @@
 			path = OAuth;
 			sourceTree = "<group>";
 		};
+		28BACF091DDDAAD30064FF6B /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				28BACF0A1DDDAAD30064FF6B /* PicPickerCollectionView.swift */,
+				28BACF0B1DDDAAD30064FF6B /* PicPickerViewCell.swift */,
+				28BACF0C1DDDAAD30064FF6B /* PicPickerViewCell.xib */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		28F3E3671DC07B48009B1423 /* WelcomeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,8 +195,9 @@
 		DE0A82E31DCE2DEE0063F038 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
-				DE0A82E41DCE2E830063F038 /* ComposeViewController.swift */,
+				28BACF091DDDAAD30064FF6B /* PicPicker */,
 				DE0A82E51DCE2E830063F038 /* ComposeViewController.xib */,
+				DE0A82E41DCE2E830063F038 /* ComposeViewController.swift */,
 				DE51876E1DCF6E46000F485D /* ComposeTitleView.swift */,
 				DE5187701DCF7411000F485D /* ComposeTextView.swift */,
 			);
@@ -329,6 +346,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5B045A1DB4CDFE0034520D /* Build configuration list for PBXNativeTarget "SinaWeibo_swift" */;
 			buildPhases = (
+				8A00007DAB04A43D89D98F0A /* 📦 Check Pods Manifest.lock */,
 				A25B7FE07F78413DEF01F209 /* [CP] Check Pods Manifest.lock */,
 				962D93CF685BDE89D270555F /* [CP] Check Pods Manifest.lock */,
 				017D40D14F515B7647397625 /* [CP] Check Pods Manifest.lock */,
@@ -399,6 +417,7 @@
 				2826628B1DBA045F005B657D /* PopoverViewController.xib in Resources */,
 				DE1419411DB67A87003F3C40 /* Null.storyboard in Resources */,
 				DE1419371DB66EB0003F3C40 /* Message.storyboard in Resources */,
+				28BACF0F1DDDAAD30064FF6B /* PicPickerViewCell.xib in Resources */,
 				DE0A82E71DCE2E830063F038 /* ComposeViewController.xib in Resources */,
 				DE14193A1DB66EC4003F3C40 /* Discover.storyboard in Resources */,
 				DE5B04511DB4CDFE0034520D /* Main.storyboard in Resources */,
@@ -451,6 +470,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A00007DAB04A43D89D98F0A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D74749806ABF5EFE7D4B886 /* [CP] Embed Pods Frameworks */ = {
@@ -558,6 +592,8 @@
 				28F3E3761DC0AA3A009B1423 /* HomeViewCell.swift in Sources */,
 				28F3E3661DC06003009B1423 /* UserAccountViewModel.swift in Sources */,
 				2822F5F51DC347DE00CF0B92 /* PicCollectionView.swift in Sources */,
+				28BACF0E1DDDAAD30064FF6B /* PicPickerViewCell.swift in Sources */,
+				28BACF0D1DDDAAD30064FF6B /* PicPickerCollectionView.swift in Sources */,
 				DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */,
 				DE74D7E41DB7C70F009E4E69 /* VisitorView.swift in Sources */,
 				DE5B04661DB4CF970034520D /* HomeViewController.swift in Sources */,
