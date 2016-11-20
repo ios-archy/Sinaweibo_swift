@@ -21,3 +21,11 @@ let redirect_uri = "http://ios.itcast.cn"
 // MARK:- 选择照片的通知常量
 let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
 let PicPickerRemovePhotoNote = "PicPickerRemovePhotoNote"
+
+
+
+
+// MARK:- 照片浏览器的通知常量
+let ShowPhotoBrowserNote = "ShowPhotoBrowserNote"
+let ShowPhotoBrowserIndexKey = "ShowPhotoBrowserIndexKey"
+let ShowPhotoBrowserUrlsKey = "ShowPhotoBrowserUrlsKey"

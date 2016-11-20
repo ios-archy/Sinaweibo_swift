@@ -62,6 +62,7 @@
 		DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74D7E11DB7C619009E4E69 /* BaseViewController.swift */; };
 		DE74D7E41DB7C70F009E4E69 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74D7E31DB7C70F009E4E69 /* VisitorView.swift */; };
 		DE74D7E61DB7C71D009E4E69 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE74D7E51DB7C71D009E4E69 /* VisitorView.xib */; };
+		DEF241AB1DE1F29800416FD3 /* FindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF241AA1DE1F29800416FD3 /* FindEmoticon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		DE74D7E11DB7C619009E4E69 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DE74D7E31DB7C70F009E4E69 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		DE74D7E51DB7C71D009E4E69 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		DEF241AA1DE1F29800416FD3 /* FindEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEmoticon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,10 +225,11 @@
 		DE57305D1DE1560000380355 /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
-				DE57305E1DE1560000380355 /* EmoticonAttachment.swift */,
 				DE57305F1DE1560000380355 /* Emoticons.bundle */,
+				DE57305E1DE1560000380355 /* EmoticonAttachment.swift */,
 				DE5730601DE1560000380355 /* EmoticonViewCell.swift */,
 				DE5730611DE1560000380355 /* EmotionController.swift */,
+				DEF241AA1DE1F29800416FD3 /* FindEmoticon.swift */,
 				DE5730621DE1560000380355 /* Model */,
 				DE5730661DE1560000380355 /* UITextView-Extension.swift */,
 			);
@@ -639,6 +642,7 @@
 				28F3E3661DC06003009B1423 /* UserAccountViewModel.swift in Sources */,
 				2822F5F51DC347DE00CF0B92 /* PicCollectionView.swift in Sources */,
 				28BACF0E1DDDAAD30064FF6B /* PicPickerViewCell.swift in Sources */,
+				DEF241AB1DE1F29800416FD3 /* FindEmoticon.swift in Sources */,
 				DE57306A1DE1560000380355 /* EmotionController.swift in Sources */,
 				28BACF0D1DDDAAD30064FF6B /* PicPickerCollectionView.swift in Sources */,
 				DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */,

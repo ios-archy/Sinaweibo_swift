@@ -52,6 +52,9 @@ class HomeViewController: BaseViewController {
         
         //5.设置提示的Label
         setupTipLabel()
+        
+        //6.正则表达式
+        regularTest()
     }
 
    
@@ -304,7 +307,83 @@ extension HomeViewController {
 
 
 
+extension HomeViewController {
 
+    func regularTest() {
+        /*
+        练习1:匹配abc
+        
+        练习2:包含一个a~z,后面必须是0~9 -->[a-z][0-9]或者[a-z]\d
+        * [a-z] : a~z
+        * [0-9]/\d : 0~9
+        
+        练习3:必须第一个是字母,第二个是数字 -->^[a-z][0-9]$
+        * ^[a-z] : 表示首字母必须是a~z
+        * \d{2,10} : 数字有2到10
+        * [a-z]$ : 表示必须以a-z的字母结尾
+        
+        练习4:必须第一个是字母,字母后面跟上4~9个数字
+        
+        练习5:不能是数字0-9
+        
+        * [^0-9] : 不能是0~9
+        
+        
+        练习6:QQ匹配:^[1-9]\d{4,11}$
+        都是数字
+        5~12位
+        并且第一位不能是0
+        
+        
+        练习7:手机号码匹配^1[3578]\d{9}$
+        1.以13/15/17/18
+        2.长度是11
+   */
+        
+        let strString = "13269285976"
+        
+        //创建表达式规则
+        let partern = "^1[3578][0-9]{9}"
+        //创建正则表达式对象
+        guard let regex = try? NSRegularExpression(pattern: partern, options: []) else {
+        
+            return
+        }
+        //3.匹配字符串中内容
+        let results = regex.matchesInString(strString, options: [], range: NSRange(location: 0, length: strString.characters.count))
+        
+        //4.遍历数组，获取结果
+        for result in results {
+            print((strString as NSString).substringWithRange(result.range))
+            print(result.range)
+        }
+        
+        
+        
+        let statusText = "@coderwhy:【动物尖叫合辑】#肥猪流#猫头鹰这么尖叫[偷笑]、@M了个J: 老鼠这么尖叫、兔子这么尖叫[吃惊]、@花满楼: 莫名奇#小笼包#妙的笑到最后[好爱哦]！~ http://t.cn/zYBuKZ8/"
+        
+        //1.创建匹配规则
+        let pattern1 = "@.*?:" //匹配出来@codewhy:
+        let pattern2 = "#.*?#" //匹配话题
+        let pattern3 = "\\[.*?\\]" //匹配表情
+        
+        let pattern4 = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?" //URL网址
+        //创建正则表达式对象
+        guard let regex1 = try? NSRegularExpression(pattern: pattern3, options: []) else
+        {
+            return
+        }
+        
+        //3.开始匹配
+        let resulsts1 = regex1.matchesInString(statusText, options: [], range: NSRange(location: 0, length: statusText.characters.count))
+        
+        //4.获取结果
+        for result1 in resulsts1 {
+        
+            print((statusText as NSString).substringWithRange(result1.range))
+        }
+    }
+}
 
 
 

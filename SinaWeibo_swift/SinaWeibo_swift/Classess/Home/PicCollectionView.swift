@@ -22,13 +22,14 @@ class PicCollectionView: UICollectionView {
         super.awakeFromNib()
         
         dataSource = self
+        delegate = self
     }
 
 }
 
 
  //MARK: --collectionView的数据源方法
-extension PicCollectionView :UICollectionViewDataSource {
+extension PicCollectionView :UICollectionViewDataSource ,UICollectionViewDelegate {
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picURLs.count
@@ -42,6 +43,11 @@ extension PicCollectionView :UICollectionViewDataSource {
         cell.picURL = picURLs[indexPath.item]
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //1获取通知所需要的参数
+//        let userInfo  = 
     }
     
 }

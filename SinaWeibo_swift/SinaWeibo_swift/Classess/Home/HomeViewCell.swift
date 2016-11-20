@@ -8,7 +8,7 @@
 
 import UIKit
 import SDWebImage
-
+import HYLabel
 private let edgeMargin : CGFloat = 15
 
 private let itemMargin : CGFloat = 10
@@ -22,7 +22,7 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: HYLabel!
     @IBOutlet weak var picView: PicCollectionView!
     
     
@@ -37,7 +37,7 @@ class HomeViewCell: UITableViewCell {
     
     
      //MARK: --自定义属性
-    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedContentLabel: HYLabel!
     
     @IBOutlet weak var picViewHcons: NSLayoutConstraint!
     @IBOutlet weak var retweetedBgView: UIView!
@@ -74,8 +74,9 @@ class HomeViewCell: UITableViewCell {
             timeLabel.text = viewModel.createAtText
             
             //7.设置正文
-            contentLabel.text = viewModel.status?.text
+            contentLabel.attributedText = FindEmoticon.shareInstance.findAttrisString( (viewModel.status?.text)!, font: contentLabel.font)
             
+            //设置来源
             sourceLabel.text = viewModel.soureceText
             
             //8.设置昵称的颜色
@@ -130,6 +131,34 @@ class HomeViewCell: UITableViewCell {
         
         //设置微博正文的宽度约束
         contentLabelWCons.constant = UIScreen.mainScreen().bounds.width - 2 * edgeMargin
+        
+        //设置HYLabel的内容
+        contentLabel.matchTextColor = UIColor.purpleColor()
+        retweetedContentLabel.matchTextColor = UIColor.purpleColor()
+        
+        //监听HYLabel内容的点击
+        //监听@谁谁的点击
+        contentLabel.userTapHandler = {(label , user, range) in
+        
+            print(user)
+            print(range)
+            
+        }
+        
+        //监听链接的点击
+        contentLabel.linkTapHandler = {(label , link ,range) in
+        
+            print(link)
+            print(range)
+        }
+        
+        //监听话题的点击
+        contentLabel.topicTapHandler = { (label , toppic ,range ) in
+        
+            print(toppic)
+            print(range)
+        }
+        
         
 //        //取出picView对应的layout
 //        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
