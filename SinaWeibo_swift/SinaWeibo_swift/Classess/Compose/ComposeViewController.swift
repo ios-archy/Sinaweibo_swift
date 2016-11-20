@@ -14,6 +14,11 @@ class ComposeViewController: UIViewController {
     private lazy var titleView : ComposeTitleView = ComposeTitleView()
     private lazy var images : [UIImage] = [UIImage]()
     
+    private lazy var emoticonVc : EmotionController  = EmotionController{[weak self] (emoticon) -> () in
+        self?.textView.insertEmoticon(emoticon)
+        self?.textViewDidChange(self!.textView)
+    }
+    
     //控件属性
     @IBOutlet weak var textView: ComposeTextView!
     @IBOutlet weak var pickerView: PicPickerCollectionView!
@@ -116,7 +121,7 @@ extension ComposeViewController {
         textView.resignFirstResponder()
         
         //2.切换键盘
-        textView.inputView = textView.inputView != nil ? nil : UISwitch()
+        textView.inputView = textView.inputView != nil ? nil : emoticonVc.view
         
         //3.弹出键盘
         textView.becomeFirstResponder()
