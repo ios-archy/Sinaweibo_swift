@@ -25,6 +25,8 @@ class HomeViewController: BaseViewController {
     
     private lazy  var tipLabel : UILabel = UILabel()
     
+    private lazy var photoBrowserAnimator  : PhotoBrowserAnimator = PhotoBrowserAnimator()
+    
     
      //MARK: --系统回调函数
     override func viewDidLoad() {
@@ -55,6 +57,9 @@ class HomeViewController: BaseViewController {
         
         //6.正则表达式
         regularTest()
+        
+        //7添加点击图片通知
+        setUPNatifications()
     }
 
    
@@ -122,6 +127,11 @@ extension HomeViewController {
         tipLabel.hidden = true
         
     }
+    
+    private func setUPNatifications(){
+    
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: ShowPhotoBrowserNote, object: nil)
+    }
 }
 
 
@@ -143,7 +153,35 @@ extension HomeViewController {
         popoverVc.transitioningDelegate = popoviewAnimator
         popoviewAnimator.presentedFrame  = CGRect(x: 100, y: 60, width: 180, height: 250)
         //4.弹出控制器
+        
+        
         presentViewController(popoverVc, animated: true, completion: nil)
+    }
+    
+    @objc private func showPhotoBrowser(note : NSNotification) {
+    
+        //1.取出数据
+        let indexPath = note.userInfo![ShowPhotoBrowserIndexKey] as! NSIndexPath
+        let picURLs = note.userInfo![ShowPhotoBrowserUrlsKey] as! [NSURL]
+        
+        let object = note.object as! PicCollectionView
+        //2.创建控制器
+        let photoBrowserVc = PhotoBrowserController(indexPath: indexPath, picUrl: picURLs)
+        
+        //2.以model形式弹出控制器
+        
+        //设置modal样式
+        photoBrowserVc.modalPresentationStyle = .Custom
+        //设置转场的代理
+        photoBrowserVc.transitioningDelegate = photoBrowserAnimator
+        
+        //设置动画的代理
+        photoBrowserAnimator.presentedDelegate = object
+        
+        photoBrowserAnimator.indexPath = indexPath
+        
+        //以modal的形式弹出控制器
+        presentViewController(photoBrowserVc, animated: true, completion: nil)
     }
 }
 

@@ -14,6 +14,8 @@
 		2849F2FE1DB8A333009A8149 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FD1DB8A333009A8149 /* UIButton-Extension.swift */; };
 		2849F3001DB8A355009A8149 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F2FF1DB8A355009A8149 /* TitleButton.swift */; };
 		2849F3041DB8B148009A8149 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */; };
+		284E2C5C1DE291570059DB08 /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E2C5B1DE291570059DB08 /* PhotoBrowserController.swift */; };
+		284E2C5E1DE29E980059DB08 /* PhotoBrowserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E2C5D1DE29E980059DB08 /* PhotoBrowserViewCell.swift */; };
 		28500DB31DBF2B5C00FC7C1D /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28500DB21DBF2B5C00FC7C1D /* OAuthViewController.swift */; };
 		28500DB51DBF2B6800FC7C1D /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28500DB41DBF2B6800FC7C1D /* OAuthViewController.xib */; };
 		28500DB71DBF306A00FC7C1D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28500DB61DBF306A00FC7C1D /* Common.swift */; };
@@ -23,6 +25,8 @@
 		28BACF0D1DDDAAD30064FF6B /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BACF0A1DDDAAD30064FF6B /* PicPickerCollectionView.swift */; };
 		28BACF0E1DDDAAD30064FF6B /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BACF0B1DDDAAD30064FF6B /* PicPickerViewCell.swift */; };
 		28BACF0F1DDDAAD30064FF6B /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BACF0C1DDDAAD30064FF6B /* PicPickerViewCell.xib */; };
+		28C800271DE2DE7800A8F46D /* PhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C800261DE2DE7800A8F46D /* PhotoBrowserAnimator.swift */; };
+		28C894A51DE2CCA80062AC86 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C894A41DE2CCA80062AC86 /* ProgressView.swift */; };
 		28F3E3661DC06003009B1423 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F3E3651DC06003009B1423 /* UserAccountViewModel.swift */; };
 		28F3E36A1DC07B69009B1423 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F3E3681DC07B69009B1423 /* WelcomeViewController.swift */; };
 		28F3E36B1DC07B69009B1423 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F3E3691DC07B69009B1423 /* WelcomeViewController.xib */; };
@@ -73,6 +77,8 @@
 		2849F2FD1DB8A333009A8149 /* UIButton-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
 		2849F2FF1DB8A355009A8149 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		2849F3031DB8B148009A8149 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		284E2C5B1DE291570059DB08 /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
+		284E2C5D1DE29E980059DB08 /* PhotoBrowserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewCell.swift; sourceTree = "<group>"; };
 		28500DB21DBF2B5C00FC7C1D /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		28500DB41DBF2B6800FC7C1D /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		28500DB61DBF306A00FC7C1D /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 		28BACF0A1DDDAAD30064FF6B /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
 		28BACF0B1DDDAAD30064FF6B /* PicPickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
 		28BACF0C1DDDAAD30064FF6B /* PicPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
+		28C800261DE2DE7800A8F46D /* PhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserAnimator.swift; sourceTree = "<group>"; };
+		28C894A41DE2CCA80062AC86 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		28F3E3651DC06003009B1423 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		28F3E3681DC07B69009B1423 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		28F3E3691DC07B69009B1423 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -159,6 +167,17 @@
 				2826628A1DBA045F005B657D /* PopoverViewController.xib */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		284E2C5A1DE291120059DB08 /* Photobrowser */ = {
+			isa = PBXGroup;
+			children = (
+				284E2C5B1DE291570059DB08 /* PhotoBrowserController.swift */,
+				284E2C5D1DE29E980059DB08 /* PhotoBrowserViewCell.swift */,
+				28C894A41DE2CCA80062AC86 /* ProgressView.swift */,
+				28C800261DE2DE7800A8F46D /* PhotoBrowserAnimator.swift */,
+			);
+			path = Photobrowser;
 			sourceTree = "<group>";
 		};
 		28500DB11DBF2B4300FC7C1D /* OAuth */ = {
@@ -303,6 +322,7 @@
 		DE5B045F1DB4CF6A0034520D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				284E2C5A1DE291120059DB08 /* Photobrowser */,
 				28F3E36C1DC08E5B009B1423 /* HomeModel */,
 				2849F3051DB8B993009A8149 /* Popover */,
 				DE1419331DB66E74003F3C40 /* Home.storyboard */,
@@ -389,6 +409,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5B045A1DB4CDFE0034520D /* Build configuration list for PBXNativeTarget "SinaWeibo_swift" */;
 			buildPhases = (
+				7C843283635469563C486FFA /* 📦 Check Pods Manifest.lock */,
 				8A00007DAB04A43D89D98F0A /* [CP] Check Pods Manifest.lock */,
 				A25B7FE07F78413DEF01F209 /* [CP] Check Pods Manifest.lock */,
 				962D93CF685BDE89D270555F /* [CP] Check Pods Manifest.lock */,
@@ -516,6 +537,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaWeibo_swift/Pods-SinaWeibo_swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7C843283635469563C486FFA /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8A00007DAB04A43D89D98F0A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,12 +660,15 @@
 				DE5B046C1DB4CFB20034520D /* ProfileViewController.swift in Sources */,
 				2849F2FE1DB8A333009A8149 /* UIButton-Extension.swift in Sources */,
 				DE57306C1DE1560000380355 /* EmoticonManager.swift in Sources */,
+				28C800271DE2DE7800A8F46D /* PhotoBrowserAnimator.swift in Sources */,
+				28C894A51DE2CCA80062AC86 /* ProgressView.swift in Sources */,
 				DE57306E1DE1560000380355 /* UITextView-Extension.swift in Sources */,
 				282662891DBA0453005B657D /* PopoverViewController.swift in Sources */,
 				2849F3041DB8B148009A8149 /* UIBarButtonItem-Extension.swift in Sources */,
 				DE0A82E61DCE2E830063F038 /* ComposeViewController.swift in Sources */,
 				28500DB31DBF2B5C00FC7C1D /* OAuthViewController.swift in Sources */,
 				DE5B044C1DB4CDFE0034520D /* AppDelegate.swift in Sources */,
+				284E2C5C1DE291570059DB08 /* PhotoBrowserController.swift in Sources */,
 				DE5B04681DB4CFA10034520D /* DisCoverViewController.swift in Sources */,
 				28F3E3701DC094BF009B1423 /* NSDate-Extension.swift in Sources */,
 				DE5B04641DB4CF8E0034520D /* MainViewController.swift in Sources */,
@@ -647,6 +686,7 @@
 				28BACF0D1DDDAAD30064FF6B /* PicPickerCollectionView.swift in Sources */,
 				DE74D7E21DB7C619009E4E69 /* BaseViewController.swift in Sources */,
 				DE5730671DE1560000380355 /* EmoticonAttachment.swift in Sources */,
+				284E2C5E1DE29E980059DB08 /* PhotoBrowserViewCell.swift in Sources */,
 				DE74D7E41DB7C70F009E4E69 /* VisitorView.swift in Sources */,
 				DE5B04661DB4CF970034520D /* HomeViewController.swift in Sources */,
 				2849F3001DB8A355009A8149 /* TitleButton.swift in Sources */,
