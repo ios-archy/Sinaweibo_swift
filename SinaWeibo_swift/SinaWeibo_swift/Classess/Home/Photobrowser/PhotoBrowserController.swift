@@ -151,6 +151,35 @@ extension PhotoBrowserController : PhotoBrowserViewCellDelegate {
     }
 }
 
+ //MARK: --遵守AnimatorDisMissDelegate
+extension PhotoBrowserController : AnimatorDismissDelegate
+{
+
+    func indexPathForDismissView() -> NSIndexPath {
+        //1.获取当前正在显示的indexPath
+        let cell = collectionView.visibleCells().first!
+        return collectionView.indexPathForCell(cell)!
+    }
+    
+    func imageViewForDismissView() -> UIImageView {
+        
+        //1.闯将UIImageView
+        let imageView = UIImageView()
+        
+        //2.设置imageView的frame
+        let cell = collectionView.visibleCells().first as! PhotoBrowserViewCell
+        imageView.frame = cell.imageView.frame
+        imageView.image = cell.imageView.image
+        
+        
+        //3.设置imageview的属性
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        
+        return imageView
+    }
+}
+
 
 class PhotoBrowserCollectionViewLayout : UICollectionViewFlowLayout {
     override func prepareLayout() {

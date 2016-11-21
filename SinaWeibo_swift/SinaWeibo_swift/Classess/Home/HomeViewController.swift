@@ -180,6 +180,8 @@ extension HomeViewController {
         
         photoBrowserAnimator.indexPath = indexPath
         
+        photoBrowserAnimator.dismissDelegate = photoBrowserVc
+        
         //以modal的形式弹出控制器
         presentViewController(photoBrowserVc, animated: true, completion: nil)
     }
